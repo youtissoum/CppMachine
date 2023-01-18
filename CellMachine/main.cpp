@@ -31,5 +31,11 @@ int main() {
 
 	CellMachine::Grid grid(10, 10);
 
+	if (grid.getCell(1, 1) == nullptr) {
+		std::cout << "test" << std::endl;
+	}
+
+	system("pause");
+
 	return 0;
 }

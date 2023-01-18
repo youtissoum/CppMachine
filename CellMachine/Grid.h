@@ -12,5 +12,7 @@ namespace CellMachine {
 		std::vector<CellMachine::Cell> cells;
 
 		Grid(const int width, const int height);
+
+		CellMachine::Cell* getCell(const int x, const int y);
 	};
 }

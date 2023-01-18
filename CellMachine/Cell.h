@@ -12,10 +12,9 @@ namespace CellMachine {
 		CellMachine::Grid& parent;
 
 	public:
+		int x, y;
 		CellMachine::CellType_e cellType;
 
-		std::pair<int, int> position;
-
-		Cell(CellMachine::Grid& grid, CellMachine::CellType_e type, std::pair<int, int> position);
+		Cell(CellMachine::Grid& grid, CellMachine::CellType_e type, int x, int y);
 	};
 }
