@@ -6,6 +6,8 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 
+#include "Grid.h"
+
 int main() {
 	/*sf::RenderWindow window(sf::VideoMode(640, 480), "C++ Machine", sf::Style::Titlebar | sf::Style::Close);
 	sf::Event ev;
@@ -26,6 +28,8 @@ int main() {
 		window.clear(sf::Color());
 		window.display();
 	}*/
+
+	CM::Grid grid(10, 10);
 
 	return 0;
 }
