@@ -1,8 +1,8 @@
 #include "Cell.h"
 
-using namespace CM;
+using namespace CellMachine;
 
-Cell::Cell(CellType_e type, std::pair<int, int> position) {
+Cell::Cell(Grid& grid, CellType_e type, std::pair<int, int> position): parent(grid) {
 	this->cellType = type;
 	this->position = position;
 }

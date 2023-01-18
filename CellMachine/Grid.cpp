@@ -1,10 +1,10 @@
 #include "Grid.h"
 
-using namespace CM;
+using namespace CellMachine;
 
 Grid::Grid(const int width, const int height) {
 	this->width = width;
 	this->height = height;
 	
-	this->cells.push_back(Cell(PUSH, std::make_pair(0, 0))); // For debugging
+	this->cells.push_back(Cell(*this, PUSH, std::make_pair(0, 0))); // For debugging
 }

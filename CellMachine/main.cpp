@@ -29,7 +29,7 @@ int main() {
 		window.display();
 	}*/
 
-	CM::Grid grid(10, 10);
+	CellMachine::Grid grid(10, 10);
 
 	return 0;
 }
