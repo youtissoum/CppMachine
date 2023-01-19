@@ -13,8 +13,8 @@ namespace CellMachine {
 
 	public:
 		int x, y;
-		CellMachine::CellType_e cellType;
+		CellMachine::CellType::CellType_e cellType;
 
-		Cell(CellMachine::Grid& grid, CellMachine::CellType_e type, int x, int y);
+		Cell(CellMachine::Grid& grid, CellMachine::CellType::CellType_e type, int x, int y);
 	};
 }

@@ -1,4 +1,6 @@
 #pragma once
 namespace CellMachine {
-	enum CellType_e {PUSH};
+	namespace CellType {
+		enum CellType_e { PUSH, TEST };
+	}
 }
