@@ -1,6 +1,4 @@
 #include <iostream>
-#include <chrono>
-#include <thread>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
@@ -9,10 +7,6 @@
 #include <SFML/Network.hpp>
 
 #include "Grid.h"
-
-using namespace std::this_thread;     // sleep_for, sleep_until
-using namespace std::chrono_literals; // ns, us, ms, s, h, etc.
-using std::chrono::system_clock;
 
 int main() {
 	/*sf::RenderWindow window(sf::VideoMode(640, 480), "C++ Machine", sf::Style::Titlebar | sf::Style::Close);
@@ -37,15 +31,26 @@ int main() {
 
 	CellMachine::Grid grid(10, 10);
 	
-	
+	grid.setCell(CellMachine::CellType::PUSH, CellMachine::Direction::RIGHT, 0, 0);
+	grid.setCell(CellMachine::CellType::PUSH, CellMachine::Direction::RIGHT, 1, 0);
 
+	grid.getCell(0, 0)->push(CellMachine::Direction::RIGHT, 1);
+
+	printf("checking at 0, 0\n");
 	if (grid.getCell(0, 0) == nullptr) {
-		std::cout << "was nullptr" << std::endl;
-	} else if (grid.getCell(0, 0)->cellType == CellMachine::CellType::PUSH) {
-		std::cout << "test" << std::endl;
+		printf("correct at 0, 0\n");
 	}
-	else {
-		std::cout << "no test was succesful" << std::endl;
+	printf("checking at 1, 0\n");
+	if (grid.getCell(1, 0)->cellType == CellMachine::CellType::PUSH) {
+		printf("correct at 1, 0\n");
+	}
+	printf("checking at 2, 0\n");
+	if (grid.getCell(2, 0)->cellType == CellMachine::CellType::PUSH) {
+		printf("correct at 2, 0\n");
+	}
+	printf("checking at 3, 0\n");
+	if (grid.getCell(3, 0) == nullptr) {
+		printf("correct at 3, 0\n");
 	}
 
 	system("pause");

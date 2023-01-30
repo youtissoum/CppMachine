@@ -17,13 +17,18 @@ Cell* Grid::getCell(const int x, const int y) {
 	return nullptr;
 }
 
-void Grid::setCell(const CellMachine::CellType::CellType_e type, const int x, const int y) {
-	Cell addedCell(*this, type, x, y);
+void Grid::setCell(const CellMachine::CellType::CellType_e type, CellMachine::Direction::Direction_e dir, const int x, const int y) {
+	Cell* addedCell = new Cell(*this, type, dir, x, y);
 
+	this->deleteCell(x, y);
+
+	this->cells.push_back(addedCell);
+}
+
+void Grid::deleteCell(const int x, const int y) {
 	Cell* cellAtPosition = this->getCell(x, y);
 	if (cellAtPosition != nullptr) {
 		std::erase(this->cells, cellAtPosition);
+		delete cellAtPosition;
 	}
-
-	this->cells.push_back(&addedCell);
 }
